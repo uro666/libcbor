@@ -3,6 +3,7 @@
 %define patch 0
 %define libname %mklibname libcbor
 %define devname %mklibname libcbor -d
+%define docname %{name}-doc
 %define soname %{name}.%{major}.%{minor}.%{patch}
 
 Name:		libcbor
@@ -37,7 +38,7 @@ schema-less binary data format.
 Summary:	CBOR protocol implementation for C
 Group:	Development/C
 Suggests:	%{devname} = %{EVRD}
-Suggests:	%{libname}-doc = %{EVRD}
+Suggests:	%{docname} = %{EVRD}
 
 %description -n %{libname}
 libcbor is a C library for parsing and generating CBOR, the general-purpose
@@ -61,18 +62,18 @@ Main features:
 Summary:	Development files for %{name}
 Group:		Development/C
 Requires:	%{libname} = %{EVRD}
-Suggests:	%{libname}-doc = %{EVRD}
+Suggests:	%{docname} = %{EVRD}
 
 %description -n %{devname}
 Development files (Headers etc.) for %{name}.
 
 ################################
-%package -n %{libname}-doc
+%package -n %{docname}
 Summary:	Documentation for %{name}
 BuildArch:	noarch
 Suggests:	%{libname} = %{EVRD}
 
-%description -n %{libname}-doc
+%description -n %{docname}
 Man pages and HTML Documentation for %{name}.
 
 ################################
@@ -132,7 +133,7 @@ ctest -VV
 %{_libdir}/pkgconfig/*
 %{_libdir}/cmake/*
 
-%files -n %{libname}-doc
+%files -n %{docname}
 %{_mandir}/*/*.3.zst
 %{_docdir}/%{libname}/html
 %license LICENSE.md
