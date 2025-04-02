@@ -1,8 +1,8 @@
 %define major 0
 %define minor 12
 %define patch 0
-%define libname %mklibname cbor
-%define devname %mklibname cbor -d
+%define libname %mklibname libcbor
+%define devname %mklibname libcbor -d
 %define soname %{name}.%{major}.%{minor}.%{patch}
 
 Name:		libcbor
